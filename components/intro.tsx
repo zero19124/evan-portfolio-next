@@ -10,7 +10,7 @@ import { FaGithubSquare } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import { TypeAnimation } from "react-type-animation";
-import html2pdf from "html2pdf.js";
+import * as html2pdf from "html2pdf.js";
 import RingLoader from "react-spinners/ClipLoader";
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
@@ -77,7 +77,7 @@ export default function Intro() {
         >
           <h1
             id="name"
-            className=" text-center mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold"
+            className=" text-center  text-3xl  sm:text-5xl lg:text-6xl lg:leading-normal font-extrabold"
           >
             <TypeAnimation
               sequence={[
@@ -139,9 +139,10 @@ export default function Intro() {
             const small = document.getElementById("small");
             if (!element) return;
             const cloneEle = element.cloneNode(true);
-            cloneEle.querySelector("#name").children[0].firstChild.nodeValue =
-              "Evan";
-            console.dir(cloneEle.querySelector("#name").children[0]);
+            (cloneEle as any).querySelector(
+              "#name"
+            ).children[0].firstChild.nodeValue = "Evan";
+            console.dir((cloneEle as any).querySelector("#name").children[0]);
             // console.dir(cloneEle.querySelector("#name").children[0].nodeValue = );
             small?.scrollIntoView();
             setTimeout(async () => {
