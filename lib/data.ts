@@ -100,7 +100,7 @@ export const projectsData = [
     A real time chat application.
     below is some of the features of the app: 
     `,
-    feats:`
+    feats: `
     - Messaging: Send text, voice messages, images, and videos to friends and groups.
     - Moments: Share updates, photos, and videos with your contacts.
     - Voice and Video Calls: Make free voice and video calls to other WeChat users.
@@ -118,6 +118,17 @@ export const projectsData = [
     title: "rmtDev",
     description:
       "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
+    feats: `
+      - Messaging: Send text, voice messages, images, and videos to friends and groups.
+      - Moments: Share updates, photos, and videos with your contacts.
+      - Voice and Video Calls: Make free voice and video calls to other WeChat users.
+      - Wallet: Transfer Balance to friends or use it to pay.
+      - WeChat Pay: Send money, make mobile payments, and manage finances.
+      - Emoji: Manage Custom Emoji and send to chats.
+      - QR Code Scanner: Scan QR codes for payments, adding contacts, and more.
+      - Location Sharing: Share your real-time location with friends.
+      - Group Chats: Create groups for communication with multiple contacts.
+      - People NearBy: To know who is nearby u.`,
     tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
     imageUrl: rmtdevImg,
   },
@@ -125,6 +136,17 @@ export const projectsData = [
     title: "Word Analytics",
     description:
       "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
+    feats: `
+      - Messaging: Send text, voice messages, images, and videos to friends and groups.
+      - Moments: Share updates, photos, and videos with your contacts.
+      - Voice and Video Calls: Make free voice and video calls to other WeChat users.
+      - Wallet: Transfer Balance to friends or use it to pay.
+      - WeChat Pay: Send money, make mobile payments, and manage finances.
+      - Emoji: Manage Custom Emoji and send to chats.
+      - QR Code Scanner: Scan QR codes for payments, adding contacts, and more.
+      - Location Sharing: Share your real-time location with friends.
+      - Group Chats: Create groups for communication with multiple contacts.
+      - People NearBy: To know who is nearby u.`,
     tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
     imageUrl: wordanalyticsImg,
   },

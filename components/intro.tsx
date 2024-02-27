@@ -12,6 +12,7 @@ import { useActiveSectionContext } from "@/context/active-section-context";
 import { TypeAnimation } from "react-type-animation";
 import * as html2pdf from "html2pdf.js";
 import RingLoader from "react-spinners/ClipLoader";
+import { url } from "inspector";
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
@@ -35,15 +36,15 @@ export default function Intro() {
               type: "tween",
               duration: 0.2,
             }}
+            style={{ width: '20vh', height: '20vh' }}
           >
             <Image
               src="/avatar.jpg"
-              alt="Ricardo portrait"
-              width="256"
-              height="256"
+              alt="Evan portrait"
               quality="95"
+              fill={true}
               priority={true}
-              className="h-28 w-28 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
+              className="rounded-full  object-cover border-[0.35rem] border-white shadow-xl"
             />
           </motion.div>
 

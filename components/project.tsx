@@ -14,7 +14,7 @@ export default function Project({
   description,
   tags,
   imageUrl,
-  feats = "",
+  feats,
 }: ProjectProps) {
   console.log(feats, "feats");
   const ref = useRef<HTMLDivElement>(null);
