@@ -115,7 +115,7 @@ export const projectsData = [
     imageUrl: corpcommentImg,
   },
   {
-    title: "rmtDev",
+    title: "Investment Flow",
     description:
       "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
     feats: `
@@ -133,7 +133,7 @@ export const projectsData = [
     imageUrl: rmtdevImg,
   },
   {
-    title: "Word Analytics",
+    title: "Invest Flow App",
     description:
       "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
     feats: `
