@@ -95,10 +95,23 @@ export const experiencesData = [
 
 export const projectsData = [
   {
-    title: "CorpComment",
-    description:
-      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
+    title: "Wechat",
+    description: `
+    A real time chat application.
+    below is some of the features of the app: 
+    `,
+    feats:`
+    - Messaging: Send text, voice messages, images, and videos to friends and groups.
+    - Moments: Share updates, photos, and videos with your contacts.
+    - Voice and Video Calls: Make free voice and video calls to other WeChat users.
+    - Wallet: Transfer Balance to friends or use it to pay.
+    - WeChat Pay: Send money, make mobile payments, and manage finances.
+    - Emoji: Manage Custom Emoji and send to chats.
+    - QR Code Scanner: Scan QR codes for payments, adding contacts, and more.
+    - Location Sharing: Share your real-time location with friends.
+    - Group Chats: Create groups for communication with multiple contacts.
+    - People NearBy: To know who is nearby u.`,
+    tags: ["ReactNative", "Expo", "Express", "Tailwind", "MongoDB"],
     imageUrl: corpcommentImg,
   },
   {

@@ -1,3 +1,5 @@
+import dayjs from "dayjs";
+
 export const validateString = (
   value: unknown,
   maxLength: number
@@ -8,7 +10,13 @@ export const validateString = (
 
   return true;
 };
-
+export function formatDateToString(date?: Date | string | number, fmt: string = 'YYYY/MM/DD') {
+  if (!date) return '-';
+  return dayjs(date).format(fmt);
+}
+export const getToday = () => {
+  return formatDateToString(Date.now(), "YYYY-MM-DD");
+};
 export const getErrorMessage = (error: unknown): string => {
   let message: string;
 
