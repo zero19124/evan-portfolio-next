@@ -35,28 +35,61 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Graduated bootcamp",
-    location: "Miami, FL",
-    description:
-      "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
+    type: "e",
+    title: "Guangxi University",
+    location: "Guangxi, CN",
+    description: "Major in Design (GPA: 3.73/5.00)",
     icon: React.createElement(LuGraduationCap),
-    date: "2019",
+    date: " August 2015 – May 2019",
   },
   {
     title: "Front-End Developer",
-    location: "Orlando, FL",
-    description:
-      "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
+    location: "Mci-finTech Shenzhen, CN ",
+    description: `
+     Developed 5 projects (web apps and mobile apps using Vue,Express and React Native) from zero to deployment.
+  • Working with 16 frontend developers, 8 product managers, and 4 ui designers to achieve design goals.
+  • Integrated popular libary to improve efficiency such as tailwindCss and auto-import-plugins.
+  • Delivered, analyzed, and resolved technical issues, and participated in the continuous enhancement of
+  established development processes.
+  • Contributed to and facilitated architectural discussions that brought out best-of-breed solutions.
+    `,
     icon: React.createElement(CgWorkAlt),
-    date: "2019 - 2021",
+    date: " 2021 –  2024",
   },
   {
-    title: "Full-Stack Developer",
-    location: "Houston, TX",
-    description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
+    title: "Frontend Developer",
+    location: "Yibang logistics Shenzhen, CN",
+    description: `
+    Developed and maintained a web application using Vue and Java supporting a 30% increase in user traffic.
+    • Collaborated with the UI/UX team to develop and maintain web user interfaces using Vue.js and Vuex
+    • Created applications mobile-first with responsive designs.
+    • Worked with the development team to troubleshoot and debug applications.
+    
+    `,
     icon: React.createElement(FaReact),
-    date: "2021 - present",
+    date: "2020 - 2021",
+  },
+  {
+    title: "Full Stack Developer",
+    location: "Shimaijie tech Shenzhen, CN",
+    description: `
+    Developed back-end logic in Java.
+    • Designed and developed RESTful web services using Vue.js, Java, Spring Boot, MyBatisPlus and mysql,
+    resulting in a 40% increase in API response time.
+    • Implemented Docker,Jenkins and Swagger integration, achieving a 30% reduction in time spent for repeated work.  
+    `,
+    icon: React.createElement(FaReact),
+    date: "2019 - 2020",
+  },
+  {
+    title: "Java Developer Intern",
+    location: "Aoke tech Nanning, CN",
+    description: `
+    Developed back-end logic in Java.
+    • Maintained and developed RESTful web services using Java, Spring.
+    `,
+    icon: React.createElement(FaReact),
+    date: "2018 - 2019",
   },
 ] as const;
 
@@ -85,6 +118,9 @@ export const projectsData = [
 ] as const;
 
 export const skillsData = [
+  "ReactNative",
+  "Expo",
+  "TSX",
   "HTML",
   "CSS",
   "JavaScript",
@@ -96,12 +132,11 @@ export const skillsData = [
   "Tailwind",
   "Prisma",
   "MongoDB",
-  "Redux",
-  "GraphQL",
-  "Apollo",
+  "Recoil",
   "Express",
-  "PostgreSQL",
-  "Python",
-  "Django",
-  "Framer Motion",
+  "Vue3",
+  "Java",
+  "Docker",
+  "Jenkins",
+  "Swagger",
 ] as const;

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React, { CSSProperties, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
@@ -10,16 +10,21 @@ import { FaGithubSquare } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import { TypeAnimation } from "react-type-animation";
-
+import html2pdf from "html2pdf.js";
+import RingLoader from "react-spinners/ClipLoader";
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
-
+  const [loading, setLoading] = useState(false);
+  const override: CSSProperties = {
+    display: "block",
+    margin: "0 auto",
+  };
   return (
     <section
       ref={ref}
       id="home"
-      className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]"
+      className="mb-6 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]"
     >
       <div className="flex items-center justify-center">
         <div className="relative">
@@ -70,7 +75,10 @@ export default function Intro() {
           transition={{ duration: 0.5 }}
           className="col-span-8 place-self-center text-center sm:text-left justify-self-start"
         >
-          <h1 className=" text-center mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold">
+          <h1
+            id="name"
+            className=" text-center mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold"
+          >
             <TypeAnimation
               sequence={[
                 "Evan",
@@ -90,8 +98,15 @@ export default function Intro() {
         </motion.div>
         <p className="font-bold">with 6 years of experience.</p>
         <p>I have experience working with </p>
-        <p className="underline">ReactNative, Vue, Node.js</p>
-        <a className="text-sm font-bold underline" href="/#skills"> more Skill details pls click to check </a>
+        <p className="underline">
+          ReactNative, Vue, Node.js<span className="text-sm"> etc.</span>
+        </p>
+        <p className="text-sm">
+          Speaker of <span className="font-bold">English Japanese Chinese</span>
+        </p>
+        <a className="text-sm font-bold underline" href="/#skills">
+          more Skill details pls click to check{" "}
+        </a>
       </motion.h1>
 
       <motion.div
@@ -116,8 +131,24 @@ export default function Intro() {
 
         <a
           className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
-          href="/CV.pdf"
           download
+          onClick={(e) => {
+            e.preventDefault();
+            setLoading(true);
+            const element = document.getElementById("main");
+            const small = document.getElementById("small");
+            if (!element) return;
+            const cloneEle = element.cloneNode(true);
+            cloneEle.querySelector("#name").children[0].firstChild.nodeValue =
+              "Evan";
+            console.dir(cloneEle.querySelector("#name").children[0]);
+            // console.dir(cloneEle.querySelector("#name").children[0].nodeValue = );
+            small?.scrollIntoView();
+            setTimeout(async () => {
+              await html2pdf().from(cloneEle).save("evan-cv");
+              setLoading(false);
+            }, 1000);
+          }}
         >
           Download CV{" "}
           <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
@@ -138,6 +169,40 @@ export default function Intro() {
         >
           <FaGithubSquare />
         </a>
+
+        {loading && (
+          <div
+            style={{
+              backgroundColor: "rgba(0,0,0,0.5)",
+              position: "fixed",
+              zIndex: 999,
+              top: 0,
+              right: 0,
+              left: 0,
+              bottom: 0,
+              justifyContent: "center",
+              alignItems: "center",
+              display: "flex",
+            }}
+          >
+            <div>
+              <RingLoader
+                color={"#fff"}
+                loading={loading}
+                cssOverride={override}
+                size={150}
+                aria-label="Loading Spinner"
+                data-testid="loader"
+              />
+              <p className="text-white">
+                downloading
+                <span className="animate-ping"> .</span>
+                <span className="animate-ping">.</span>
+                <span className="animate-ping">.</span>
+              </p>
+            </div>
+          </div>
+        )}
       </motion.div>
     </section>
   );

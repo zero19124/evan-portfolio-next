@@ -15,7 +15,7 @@ export default function Contact() {
     <motion.section
       id="contact"
       ref={ref}
-      className="mb-20 sm:mb-28 w-[min(100%,38rem)] text-center"
+      className="mb-20 sm:mb-6 w-[min(100%,38rem)] text-center"
       initial={{
         opacity: 0,
       }}
@@ -36,7 +36,7 @@ export default function Contact() {
         <a className="underline" href="mailto:example@gmail.com">
           qq534883225@gmail.com
         </a>
-        <span> or through this form.</span>
+        <span> or through my phone number(+86 18376639110).</span>
       </p>
 
       <form
@@ -61,7 +61,7 @@ export default function Contact() {
           maxLength={500}
           placeholder="Your email"
         /> */}
-        <textarea
+        {/* <textarea
           disabled
           className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
           name="message"
@@ -69,7 +69,7 @@ export default function Contact() {
           required
           maxLength={5000}
         />
-        <SubmitBtn />
+        <SubmitBtn /> */}
       </form>
     </motion.section>
   );

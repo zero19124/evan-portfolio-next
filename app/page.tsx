@@ -5,17 +5,26 @@ import Intro from "@/components/intro";
 import Projects from "@/components/projects";
 import SectionDivider from "@/components/section-divider";
 import Skills from "@/components/skills";
+// import { GlobalLoading, showLoading } from "react-global-loading";
 
 export default function Home() {
+  // const show = () => {
+  //   showLoading(true);
+  //   setTimeout(() => {
+  //     showLoading(false);
+  //   }, 1000);
+  // };
+  // show()
   return (
-    <main className="flex flex-col items-center px-4">
+    <main className="flex flex-col items-center px-4" id="main">
       <Intro />
-      <SectionDivider />
+      {/* <SectionDivider /> */}
       <About />
-      <Projects />
       <Skills />
+      <Projects />
       <Experience />
       <Contact />
+      {/* <GlobalLoading /> */}
     </main>
   );
 }
