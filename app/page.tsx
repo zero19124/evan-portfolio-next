@@ -23,7 +23,7 @@ export default function Home() {
       <Skills />
       <Projects />
       <Experience />
-      <Contact />
+      {/* <Contact /> */}
       {/* <GlobalLoading /> */}
     </main>
   );

@@ -36,7 +36,7 @@ export default function Intro() {
               type: "tween",
               duration: 0.2,
             }}
-            style={{ width: '20vh', height: '20vh' }}
+            style={{ width: "20vh", height: "20vh" }}
           >
             <Image
               src="/avatar.jpg"
@@ -97,17 +97,17 @@ export default function Intro() {
             />
           </h1>
         </motion.div>
-        <p className="font-bold">with 6 years of experience.</p>
-        <p>I have experience working with </p>
+        <p className="font-bold">with 6 years of experience</p>
         <p className="underline">
-          ReactNative, Vue, Node.js<span className="text-sm"> etc.</span>
+          with ReactNative, Vue, Node.js<span className="text-sm"> etc.</span>
         </p>
-        <p className="text-sm">
+        <a className=" block text-sm font-bold underline" href="/#skills">
+          more skills check here{" "}
+        </a>
+        <p className=" text-lg">Frontend Dev | Mobile Dev | FullStack</p>
+        <p className="text-base">
           Speaker of <span className="font-bold">English Japanese Chinese</span>
         </p>
-        <a className="text-sm font-bold underline" href="/#skills">
-          more Skill details pls click to check{" "}
-        </a>
       </motion.h1>
 
       <motion.div
@@ -119,14 +119,19 @@ export default function Intro() {
         }}
       >
         <Link
-          href="#contact"
-          className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
+          // target="_blank"
+          href={`${
+            process.env.NODE_ENV === "production"
+              ? "https://evan-portfolio-next.onrender.com"
+              : "localhost:3000"
+          }#projects`}
+          className=" mr-2 group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
           onClick={() => {
-            setActiveSection("Contact");
+            setActiveSection("Projects");
             setTimeOfLastClick(Date.now());
           }}
         >
-          Contact me here{" "}
+          Check My Projects here
           <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
         </Link>
 
@@ -157,17 +162,17 @@ export default function Intro() {
         </a>
 
         <div className="flex">
-          <a
+          {/* <a
             className="bg-white p-4 text-gray-700 hover:text-gray-950 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
             href="https://linkedin.com"
             target="_blank"
           >
             <BsLinkedin />
-          </a>
+          </a> */}
 
           <a
             className="bg-white p-4 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
-            href="https://github.com"
+            href="https://github.com/zero19124"
             target="_blank"
           >
             <FaGithubSquare />
