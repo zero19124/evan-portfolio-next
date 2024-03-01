@@ -99,16 +99,26 @@ export default function Intro() {
           </h1>
         </motion.div>
         <p className="font-bold">with 6 years of experience</p>
-        <p className="underline">
+        <p className="">
           in ReactNative, Vue, Node.js<span className="text-sm"> etc.</span>
         </p>
-        <a className=" block text-sm font-bold underline" href="/#skills">
-          more skills check here{" "}
-        </a>
+
+        <p className="text-base">
+          <a
+            className="underline mr-2 "
+            href="mailto:qq534883225@gmail.com@gmail.com"
+          >
+            qq534883225@gmail.com
+          </a>
+          <span className="w-150 inline-block sm:inline"> +86-18376639110</span>
+        </p>
         <p className=" text-lg">Frontend Dev | Mobile Dev | FullStack</p>
         <p className="text-base">
           Speaker of <span className="font-bold">English Japanese Chinese</span>
         </p>
+        <a className=" block text-sm font-bold underline" href="/#skills">
+          more skills check here{" "}
+        </a>
       </motion.h1>
 
       <motion.div
