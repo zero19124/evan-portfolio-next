@@ -29,8 +29,8 @@ export default function About() {
         feeling of finally figuring out a solution to a problem.
       </p>
 
-      <p>
-        <span className="italic">When I'm not coding</span>, I enjoy playing
+      <p className="mb-4">
+        <span className="italic ">When I'm not coding</span>, I enjoy playing
         ball games,hiking, watching movies or anime. I also
         enjoy <span className="font-medium">learning new things</span>.
       </p>

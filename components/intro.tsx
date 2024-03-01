@@ -100,7 +100,7 @@ export default function Intro() {
         </motion.div>
         <p className="font-bold">with 6 years of experience</p>
         <p className="">
-          in ReactNative, Vue, Node.js<span className="text-sm"> etc.</span>
+          in ReactNative, Vue, Node<span className="text-sm"> etc.</span>
         </p>
 
         <p className="text-base">
@@ -136,14 +136,16 @@ export default function Intro() {
               ? "https://evan-portfolio-next.onrender.com"
               : "localhost:3000"
           }#projects`}
-          className=" mr-2 group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
+          className=" relative mr-2 group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
           onClick={() => {
             setActiveSection("Projects");
             setTimeOfLastClick(Date.now());
           }}
         >
-          Check My Projects here
-          <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
+          <>
+            Check My Projects here
+            <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
+          </>
         </Link>
 
         <a

@@ -116,24 +116,21 @@ export const projectsData = [
     imageUrl: corpcommentImg,
   },
   {
-    title: "Investment Flow",
+    title: "Investment and Development System",
     videoUrl:
       "https://wechat-server-jhc0.onrender.com/files/invest-web-intro.mp4",
 
-    description:
-      "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
+    description: "Investment Control System",
     feats: `
-      - Messaging: Send text, voice messages, images, and videos to friends and groups.
-      - Moments: Share updates, photos, and videos with your contacts.
-      - Voice and Video Calls: Make free voice and video calls to other WeChat users.
-      - Wallet: Transfer Balance to friends or use it to pay.
-      - WeChat Pay: Send money, make mobile payments, and manage finances.
-      - Emoji: Manage Custom Emoji and send to chats.
-      - QR Code Scanner: Scan QR codes for payments, adding contacts, and more.
-      - Location Sharing: Share your real-time location with friends.
-      - Group Chats: Create groups for communication with multiple contacts.
-      - People NearBy: To know who is nearby u.`,
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
+    - customer management
+    - investment flow management
+    - tasks management
+    - preview management
+    - cooperation platform
+    - management after investing
+    - partnership platform
+     `,
+    tags: ["Vue3", "TypeScript", "Piania", "Tailwind"],
     imageUrl: rmtdevImg,
   },
   {
@@ -141,20 +138,17 @@ export const projectsData = [
     videoUrl:
       "https://wechat-server-jhc0.onrender.com/files/invest-mobile-intro.mp4",
 
-    description:
-      "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
+    description: "a simplified version of the web application",
     feats: `
-      - Messaging: Send text, voice messages, images, and videos to friends and groups.
-      - Moments: Share updates, photos, and videos with your contacts.
-      - Voice and Video Calls: Make free voice and video calls to other WeChat users.
-      - Wallet: Transfer Balance to friends or use it to pay.
-      - WeChat Pay: Send money, make mobile payments, and manage finances.
-      - Emoji: Manage Custom Emoji and send to chats.
-      - QR Code Scanner: Scan QR codes for payments, adding contacts, and more.
-      - Location Sharing: Share your real-time location with friends.
-      - Group Chats: Create groups for communication with multiple contacts.
-      - People NearBy: To know who is nearby u.`,
-    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
+    - customer management
+    - investment flow management
+    - tasks management
+    - preview management
+    - cooperation platform
+    - management after investing
+    - partnership platform
+`,
+    tags: ["ReactNative", "Recoil", "Tailwind"],
     imageUrl: wordanalyticsImg,
   },
 ] as const;
