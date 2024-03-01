@@ -1,5 +1,6 @@
 "use client";
-
+// @ts-nocheck
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import React, { CSSProperties, useState } from "react";
 import { motion } from "framer-motion";
@@ -10,7 +11,6 @@ import { FaGithubSquare } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import { TypeAnimation } from "react-type-animation";
-import * as html2pdf from "html2pdf.js";
 import RingLoader from "react-spinners/ClipLoader";
 import { url } from "inspector";
 export default function Intro() {
@@ -43,6 +43,7 @@ export default function Intro() {
               alt="Evan portrait"
               quality="95"
               fill={true}
+              objectFit="cover"
               priority={true}
               className="rounded-full  object-cover border-[0.35rem] border-white shadow-xl"
             />
@@ -99,7 +100,7 @@ export default function Intro() {
         </motion.div>
         <p className="font-bold">with 6 years of experience</p>
         <p className="underline">
-          with ReactNative, Vue, Node.js<span className="text-sm"> etc.</span>
+          in ReactNative, Vue, Node.js<span className="text-sm"> etc.</span>
         </p>
         <a className=" block text-sm font-bold underline" href="/#skills">
           more skills check here{" "}
@@ -152,6 +153,11 @@ export default function Intro() {
             // console.dir(cloneEle.querySelector("#name").children[0].nodeValue = );
             small?.scrollIntoView();
             setTimeout(async () => {
+              const { default: html2pdf } = await import("html2pdf.js");
+
+              if (typeof window === "undefined") return;
+              if (typeof document === "undefined") return;
+
               await html2pdf().from(cloneEle).save("evan-cv");
               setLoading(false);
             }, 1000);
