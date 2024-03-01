@@ -99,7 +99,7 @@ export default function Intro() {
           </h1>
         </motion.div>
         <p className="font-bold">with 6 years of experience</p>
-        <p className="">
+        <p className="text-xl">
           in ReactNative, Vue, Node<span className="text-sm"> etc.</span>
         </p>
 
