@@ -12,6 +12,7 @@ type ProjectProps = (typeof projectsData)[number];
 
 export default function Project({
   title,
+  videoUrl,
   description,
   tags,
   imageUrl,
@@ -107,6 +108,18 @@ export default function Project({
             >
               <RxVideo
                 onClick={() => {
+                  if (title === "Wechat") {
+                    alert(
+                      "this video have the en and cn subtitle, turn it on if u need it! and also dont forget to turn the voice on!"
+                    );
+                    window.open(
+                      "https://www.bilibili.com/video/BV1kW421A7Fh",
+                      "_blank"
+                    );
+
+                    return;
+                  }
+
                   setShow(!show);
                 }}
                 style={{ width: "5rem", height: "5rem" }}
@@ -141,7 +154,8 @@ export default function Project({
               className="w-full h-full"
               autoPlay
               controls
-              src="https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4"
+              src={videoUrl}
+              // src="https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4"
             />
           </div>
         )}

@@ -100,6 +100,7 @@ export const projectsData = [
     A real time chat application.
     below is some of the features of the app: 
     `,
+    videoUrl: "https://wechat-server-jhc0.onrender.com/files/wechat-intro.mp4",
     feats: `
     - Messaging: Send text, voice messages, images, and videos to friends and groups.
     - Moments: Share updates, photos, and videos with your contacts.
@@ -116,6 +117,9 @@ export const projectsData = [
   },
   {
     title: "Investment Flow",
+    videoUrl:
+      "https://wechat-server-jhc0.onrender.com/files/invest-web-intro.mp4",
+
     description:
       "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
     feats: `
@@ -134,6 +138,9 @@ export const projectsData = [
   },
   {
     title: "Invest Flow App",
+    videoUrl:
+      "https://wechat-server-jhc0.onrender.com/files/invest-mobile-intro.mp4",
+
     description:
       "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
     feats: `
