@@ -140,7 +140,7 @@ export const projectsData = [
       android: "",
       web: "https://next-ai-platform.onrender.com",
     },
-    videoUrl: "https://wechat-server-jhc0.onrender.com/files/wechat-intro.mp4",
+    videoUrl: "https://wechat-server-jhc0.onrender.com/files/1709785290072.mov",
     feats: `
     - Stripe monthly subscription
     - Stripe Top up credits
