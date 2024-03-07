@@ -17,6 +17,7 @@ export default function Project({
   tags,
   imageUrl,
   feats,
+  link,
 }: ProjectProps) {
   // console.log(feats, "feats");
   const ref = useRef<HTMLDivElement>(null);
@@ -36,23 +37,41 @@ export default function Project({
       }}
       className="group mb-3 sm:mb-8 last:mb-0 transition"
     >
-      <section className="bg-gray-100 max-w-[42rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] hover:bg-gray-200 transition sm:group-even:pl-8 dark:text-white dark:bg-white/10 dark:hover:bg-white/20">
-        <div className="pt-4 pb-3 px-5 sm:pl-10 sm:pr-2 sm:pt-4 sm:max-w-[50%] flex flex-col h-full sm:group-even:ml-[18rem]">
+      <section className="bg-gray-100 max-w-[45rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[25rem] hover:bg-gray-200 transition sm:group-even:pl-8 dark:text-white dark:bg-white/10 dark:hover:bg-white/20">
+        <div className="pt-4 pb-3 px-5 sm:pl-6 sm:pr-2 sm:pt-4 sm:max-w-[55%] flex flex-col h-full sm:group-even:ml-[18rem]">
           <div className="flex gap-4 justify-center items-center">
             <h3 className="text-2xl font-semibold">{title}</h3>
-            <a
-              target="_blank"
-              href="https://github.com/zero19124/wechat-clone-v2"
-            >
+            <a target="_blank" href="https://github.com/zero19124">
               <FaGithubSquare className=" w-6 h-6" />
             </a>
           </div>
 
-          <p className="leading-relaxed text-gray-700 dark:text-white/70  ">
+          <p className="text-xl  leading-relaxed text-gray-700 dark:text-white/70  ">
             {description}
           </p>
+          <p className="text-center underline text-sm">
+            {link.type === "web" && link.web && (
+              <a href={link.web} target="_blank">
+                Check it out
+              </a>
+            )}
+          </p>
+          <p className="text-center  text-sm">
+            {link.type === "mobile" && link.android && (
+              <a className="underline mr-4" href={link.android} target="_blank">
+                Install Android
+              </a>
+            )}
+            {link.type === "mobile" && link.ios && (
+              <span onClick={()=>{
+                alert('send me gmail. I will invite u to TestFlight for installing or download the android directly.')
+              }} className="underline cursor-pointer">
+                Install IOS
+              </span>
+            )}
+          </p>
           {feats ? (
-            <div style={{ height: "6rem", overflow: "scroll" }}>
+            <div style={{ overflow: "scroll" }}>
               {feats.split("-").map((subDesc, subDescIndex) => {
                 return subDescIndex ? (
                   <p className="!mt-0" key={subDescIndex}>
@@ -67,7 +86,7 @@ export default function Project({
             </p>
           )}
 
-          <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto">
+          <ul className="flex flex-wrap mt-4 gap-2 ">
             {tags.map((tag, index) => (
               <li
                 className="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70"
@@ -112,11 +131,7 @@ export default function Project({
                     alert(
                       "this video have the en and cn subtitle, turn it on if u need it! and also dont forget to turn the voice on!"
                     );
-                    window.open(
-                      "https://www.bilibili.com/video/BV1kW421A7Fh",
-                      "_blank"
-                    );
-
+                    window.open(videoUrl, "_blank");
                     return;
                   }
 

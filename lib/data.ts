@@ -5,6 +5,7 @@ import { LuGraduationCap } from "react-icons/lu";
 import corpcommentImg from "@/public/we-chat-overview.png";
 import rmtdevImg from "@/public/mci-pc.png";
 import wordanalyticsImg from "@/public/mic-mobile.png";
+import aiPage1 from "@/public/ai-page-1.png";
 
 export const links = [
   {
@@ -97,10 +98,15 @@ export const projectsData = [
   {
     title: "Wechat",
     description: `
-    A real time chat application.
-    below is some of the features of the app: 
+    A real time chat application. 
     `,
-    videoUrl: "https://wechat-server-jhc0.onrender.com/files/wechat-intro.mp4",
+    link: {
+      type: "mobile",
+      ios: "3",
+      android: "3",
+      web: "",
+    },
+    videoUrl: "https://www.bilibili.com/video/BV1kW421A7Fh",
     feats: `
     - Messaging: Send text, voice messages, images, and videos to friends and groups.
     - Moments: Share updates, photos, and videos with your contacts.
@@ -112,8 +118,44 @@ export const projectsData = [
     - Location Sharing: Share your real-time location with friends.
     - Group Chats: Create groups for communication with multiple contacts.
     - People NearBy: To know who is nearby u.`,
-    tags: ["ReactNative", "Expo", "Express", "Tailwind", "MongoDB"],
+    tags: [
+      "ReactNative",
+      "WebRtc",
+      "Socket",
+      "Expo",
+      "Express",
+      "Tailwind",
+      "MongoDB",
+    ],
     imageUrl: corpcommentImg,
+  },
+  {
+    title: "AI SaaS Platform",
+    description: `
+    Conversation Code Video and Music generation.
+    `,
+    link: {
+      type: "web",
+      ios: "",
+      android: "",
+      web: "https://next-ai-platform.onrender.com",
+    },
+    videoUrl: "https://wechat-server-jhc0.onrender.com/files/wechat-intro.mp4",
+    feats: `
+    - Stripe monthly subscription
+    - Stripe Top up credits
+    - Free tier with API limiting
+    - RealTime Customer Support
+    - Tailwind design animations and effects
+    - Full responsiveness
+    - Clerk Authentication (Email, Google, 9+ Social Logins)
+    - Image Generation Tool (Yiyan AI)
+    - Video Generation Tool (Replicate AI)
+    - Conversation Generation Tool (Yiyan AI)
+    - Music Generation Tool (Replicate AI)
+    - Page loading state`,
+    tags: ["NextJs", "Prisma", "Clerk", "Tailwind", "Stripe"],
+    imageUrl: aiPage1,
   },
   {
     title: "Investment and Development System",
@@ -121,6 +163,12 @@ export const projectsData = [
       "https://wechat-server-jhc0.onrender.com/files/invest-web-intro.mp4",
 
     description: "Investment Control System",
+    link: {
+      type: "web",
+      ios: "",
+      android: "",
+      web: "",
+    },
     feats: `
     - customer management
     - investment flow management
@@ -137,7 +185,11 @@ export const projectsData = [
     title: "Invest Flow App",
     videoUrl:
       "https://wechat-server-jhc0.onrender.com/files/invest-mobile-intro.mp4",
-
+    link: {
+      type: "mobile",
+      ios: "",
+      android: "",
+    },
     description: "a simplified version of the web application",
     feats: `
     - customer management
@@ -161,6 +213,8 @@ export const skillsData = [
   "CSS",
   "JavaScript",
   "TypeScript",
+  "Socket",
+  "WebRtc",
   "React",
   "Next.js",
   "Node.js",
@@ -168,11 +222,16 @@ export const skillsData = [
   "Tailwind",
   "Prisma",
   "MongoDB",
+  "mongoose",
   "Recoil",
   "Express",
   "Vue3",
+  "Vite",
   "Java",
+  "Android",
+  "Kotlin",
   "Docker",
   "Jenkins",
+  "Stripe",
   "Swagger",
 ] as const;
