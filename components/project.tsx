@@ -7,6 +7,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { RxVideo } from "react-icons/rx";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { FaGithubSquare } from "react-icons/fa";
+import YouTube from "react-youtube";
 
 type ProjectProps = (typeof projectsData)[number];
 
@@ -28,6 +29,68 @@ export default function Project({
   const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
   const [show, setShow] = useState(false);
+  const getVideoContent = (title: string) => {
+    if (title === "AI SaaS Platform") {
+      return (
+        <YouTube
+          className=" absolute  top-0 bottom-0 left-0 right-0"
+          videoId="3rfHoSe_oMU"
+          opts={{
+            height: "100%",
+            width: "100%",
+            playerVars: {
+              // https://developers.google.com/youtube/player_parameters
+              autoplay: 1,
+            },
+          }}
+          onEnd={() => {
+            setShow(false);
+          }}
+          onReady={(event) => {
+            // access to player in all event handlers via event.target
+            // event.target.pauseVideo();
+          }}
+        />
+      );
+    }
+    return (
+      <div
+        style={{
+          backgroundColor: "rgba(0,0,0,0.5)",
+        }}
+        className=" absolute  top-0 bottom-0 left-0 right-0"
+      >
+        <div style={{ zIndex: 1 }} className="absolute top-5 left-3  flex">
+          <IoMdArrowRoundBack
+            onClick={() => {
+              setShow(!show);
+            }}
+            fill="#fff"
+            className="w-6 h-6 cursor-pointer"
+          />
+          <span className="text-white"> {title} Demo</span>
+        </div>
+
+        <video
+          style={{ objectFit: "cover" }}
+          className="w-full h-full"
+          autoPlay
+          controls
+          src={videoUrl}
+          // src="https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4"
+        />
+      </div>
+    );
+  };
+  const getPlatform = (title: string) => {
+    if (title === "Wechat") {
+      return "on BiliBili";
+    }
+    if (title === "AI SaaS Platform") {
+      return "on Youtube";
+    }
+    return "";
+  };
   return (
     <motion.div
       ref={ref}
@@ -63,9 +126,14 @@ export default function Project({
               </a>
             )}
             {link.type === "mobile" && link.ios && (
-              <span onClick={()=>{
-                alert('send me gmail. I will invite u to TestFlight for installing or download the android directly.')
-              }} className="underline cursor-pointer">
+              <span
+                onClick={() => {
+                  alert(
+                    "send me gmail. I will invite u to TestFlight for installing or download the android directly."
+                  );
+                }}
+                className="underline cursor-pointer"
+              >
                 Install IOS
               </span>
             )}
@@ -121,7 +189,7 @@ export default function Project({
             className=" absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2  bg-true-gray-400 flex justify-center items-center"
           >
             <div
-              className=" opacity-[0.3] justify-center
+              className=" opacity-[0.3] justify-center 
          hover:scale-150  hover:opacity-[0.7] cursor-pointer 
        transition"
             >
@@ -140,40 +208,16 @@ export default function Project({
                 style={{ width: "5rem", height: "5rem" }}
                 className=" m-auto "
               />
-              <span className="hover:opacity-[0.7] opacity-[1]">
-                Play the Demo
+              <span
+                className="hover:opacity-[0.7] opacity-[1] text-white"
+                style={{ WebkitTextStroke: "1px black" }}
+              >
+                Play the Demo {getPlatform(title)}
               </span>
             </div>
           </div>
         )}
-        {show && (
-          <div
-            style={{
-              backgroundColor: "rgba(0,0,0,0.5)",
-              zIndex: 95,
-            }}
-            className=" absolute  top-0 bottom-0 left-0 right-0"
-          >
-            <div style={{ zIndex: 1 }} className="absolute top-5 left-3  flex">
-              <IoMdArrowRoundBack
-                onClick={() => {
-                  setShow(!show);
-                }}
-                fill="#fff"
-                className="w-6 h-6 cursor-pointer"
-              />
-              <span className="text-white"> {title} Demo</span>
-            </div>
-            <video
-              style={{ objectFit: "cover" }}
-              className="w-full h-full"
-              autoPlay
-              controls
-              src={videoUrl}
-              // src="https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4"
-            />
-          </div>
-        )}
+        {show && getVideoContent(title)}
       </section>
     </motion.div>
   );

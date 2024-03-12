@@ -39,7 +39,7 @@ export const experiencesData = [
     type: "e",
     title: "Guangxi University",
     location: "Guangxi, CN",
-    description: "Major in Design (GPA: 3.73/5.00)",
+    description: "Major in Design (GPA: 3.73)",
     icon: React.createElement(LuGraduationCap),
     date: " August 2015 – May 2019",
   },
