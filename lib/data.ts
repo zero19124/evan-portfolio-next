@@ -101,12 +101,13 @@ export const projectsData = [
     A real time chat application. 
     `,
     link: {
+      git: "https://github.com/zero19124/wechat-clone-v2",
       type: "mobile",
-      ios: "3",
-      android: "3",
+      ios: "https://wechat-server-jhc0.onrender.com/files/wechat-clone.ipa",
+      android: "https://wechat-server-jhc0.onrender.com/files/wechat-clone.apk",
       web: "",
     },
-    videoUrl: "https://www.bilibili.com/video/BV1kW421A7Fh",
+    videoUrl: "_NZPz8je7rE",
     feats: `
     - Messaging: Send text, voice messages, images, and videos to friends and groups.
     - Moments: Share updates, photos, and videos with your contacts.
@@ -135,12 +136,13 @@ export const projectsData = [
     Conversation Code Video and Music generation.
     `,
     link: {
+      git: "https://github.com/zero19124/next-ai-platform",
       type: "web",
       ios: "",
       android: "",
       web: "https://next-ai-platform.onrender.com",
     },
-    videoUrl: "https://wechat-server-jhc0.onrender.com/files/1709785290072.mov",
+    videoUrl: "3rfHoSe_oMU",
     feats: `
     - Stripe monthly subscription
     - Stripe Top up credits
@@ -164,6 +166,8 @@ export const projectsData = [
 
     description: "Investment Control System",
     link: {
+      git: "",
+
       type: "web",
       ios: "",
       android: "",
@@ -186,6 +190,7 @@ export const projectsData = [
     videoUrl:
       "https://wechat-server-jhc0.onrender.com/files/invest-mobile-intro.mp4",
     link: {
+      git: "",
       type: "mobile",
       ios: "",
       android: "",

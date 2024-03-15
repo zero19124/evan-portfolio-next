@@ -29,28 +29,49 @@ export default function Project({
   const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
   const [show, setShow] = useState(false);
-  const getVideoContent = (title: string) => {
-    if (title === "AI SaaS Platform") {
-      return (
-        <YouTube
-          className=" absolute  top-0 bottom-0 left-0 right-0"
-          videoId="3rfHoSe_oMU"
-          opts={{
-            height: "100%",
-            width: "100%",
-            playerVars: {
-              // https://developers.google.com/youtube/player_parameters
-              autoplay: 1,
-            },
+
+  const getGoBack = () => {
+    const isMain = ["Wechat", "AI SaaS Platform"].includes(title);
+    return (
+      <div
+        style={{ zIndex: 1 }}
+        className={`absolute ${isMain ? "top-14" : "top-5"} left-3 flex`}
+      >
+        <IoMdArrowRoundBack
+          onClick={() => {
+            setShow(!show);
           }}
-          onEnd={() => {
-            setShow(false);
-          }}
-          onReady={(event) => {
-            // access to player in all event handlers via event.target
-            // event.target.pauseVideo();
-          }}
+          fill="#fff"
+          className="w-6 h-6 cursor-pointer"
         />
+        {!isMain && <span className="text-white"> {title} Demo</span>}
+      </div>
+    );
+  };
+  const getVideoContent = (title: string) => {
+    if (title === "AI SaaS Platform" || title === "Wechat") {
+      return (
+        <div>
+          {getGoBack()}
+          <YouTube
+            className=" absolute  top-0 bottom-0 left-0 right-0"
+            videoId={videoUrl}
+            opts={{
+              height: "100%",
+              width: "100%",
+              playerVars: {
+                autoplay: 1,
+              },
+            }}
+            onEnd={() => {
+              setShow(false);
+            }}
+            onReady={(event) => {
+              // access to player in all event handlers via event.target
+              // event.target.pauseVideo();
+            }}
+          />
+        </div>
       );
     }
     return (
@@ -60,16 +81,7 @@ export default function Project({
         }}
         className=" absolute  top-0 bottom-0 left-0 right-0"
       >
-        <div style={{ zIndex: 1 }} className="absolute top-5 left-3  flex">
-          <IoMdArrowRoundBack
-            onClick={() => {
-              setShow(!show);
-            }}
-            fill="#fff"
-            className="w-6 h-6 cursor-pointer"
-          />
-          <span className="text-white"> {title} Demo</span>
-        </div>
+        {getGoBack()}
 
         <video
           style={{ objectFit: "cover" }}
@@ -83,13 +95,13 @@ export default function Project({
     );
   };
   const getPlatform = (title: string) => {
-    if (title === "Wechat") {
-      return "on BiliBili";
-    }
-    if (title === "AI SaaS Platform") {
-      return "on Youtube";
-    }
-    return "";
+    // if (title === "Wechat") {
+    //   return "on BiliBili";
+    // }
+    // if (title === "AI SaaS Platform") {
+    //   return "on Youtube";
+    // }
+    return "on Youtube";
   };
   return (
     <motion.div
@@ -104,7 +116,10 @@ export default function Project({
         <div className="pt-4 pb-3 px-5 sm:pl-6 sm:pr-2 sm:pt-4 sm:max-w-[55%] flex flex-col h-full sm:group-even:ml-[18rem]">
           <div className="flex gap-4 justify-center items-center">
             <h3 className="text-2xl font-semibold">{title}</h3>
-            <a target="_blank" href="https://github.com/zero19124">
+            <a
+              target="_blank"
+              href={link.git || "https://github.com/zero19124"}
+            >
               <FaGithubSquare className=" w-6 h-6" />
             </a>
           </div>
@@ -136,6 +151,18 @@ export default function Project({
               >
                 Install IOS
               </span>
+            )}
+            {title === "Wechat" && (
+              <>
+                <br />
+                <a
+                  className="underline mr-4 text-yellow-500"
+                  href={"https://www.bilibili.com/video/BV192421N7Xt"}
+                  target="_blank"
+                >
+                  watch on BiliBili with chinese and english subtitle
+                </a>
+              </>
             )}
           </p>
           {feats ? (
@@ -176,11 +203,9 @@ export default function Project({
         group-hover:-translate-x-3
         group-hover:translate-y-3
         group-hover:-rotate-2
-
         group-even:group-hover:translate-x-3
         group-even:group-hover:translate-y-3
         group-even:group-hover:rotate-2
-
         group-even:right-[initial] group-even:-left-40"
         />
         {!show && (
@@ -195,13 +220,13 @@ export default function Project({
             >
               <RxVideo
                 onClick={() => {
-                  if (title === "Wechat") {
-                    alert(
-                      "this video have the en and cn subtitle, turn it on if u need it! and also dont forget to turn the voice on!"
-                    );
-                    window.open(videoUrl, "_blank");
-                    return;
-                  }
+                  // if (title === "Wechat") {
+                  //   alert(
+                  //     "this video have the en and cn subtitle, turn it on if u need it! and also dont forget to turn the voice on!"
+                  //   );
+                  //   window.open(videoUrl, "_blank");
+                  //   return;
+                  // }
 
                   setShow(!show);
                 }}
