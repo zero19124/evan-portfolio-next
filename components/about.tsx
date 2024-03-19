@@ -20,19 +20,21 @@ export default function About() {
       <SectionHeading>About me</SectionHeading>
       <p className="mb-3">
         <p className="text-base">
-          I am a quick learner and I am always looking to expand my knowledge
-          and skill set and Strong ability to multitask effectively and remain
-          resilient under pressure.
+          <span className=" font-bold text-xl">I make apps for fun</span> and
+          continuously expanding my skill set. I'm a quick learner with a strong
+          passion for tackling new challenges.
         </p>
         <span className="italic">My favorite part of programming</span> is the
-        problem-solving aspect. I <span className="underline">love</span> the
-        feeling of finally figuring out a solution to a problem.
+        problem-solving aspect. and knowing how the apps work. 
+        <span className="underline"> love </span> the feeling of finally figuring
+        out a solution to a problem.
       </p>
 
       <p className="mb-4">
-        <span className="italic ">When I'm not coding</span>, I enjoy playing
-        ball games,hiking, watching movies or anime. I also
-        enjoy <span className="font-medium">learning new things</span>.
+        <span className="italic ">in my spare time</span>, I enjoy cloning apps
+        that catch my interest, watching tech video to learn new technologies. or play the sports like
+        ball games and enjoy{" "}
+        <span className="font-medium">learning new things</span>.
       </p>
     </motion.section>
   );

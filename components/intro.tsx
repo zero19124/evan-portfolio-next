@@ -39,7 +39,8 @@ export default function Intro() {
             style={{ width: "20vh", height: "20vh" }}
           >
             <Image
-              src="/avatar.jpg"
+              src="/IMG_7688.png"
+              // src="/avatar.jpg"
               alt="Evan portrait"
               quality="95"
               fill={true}
